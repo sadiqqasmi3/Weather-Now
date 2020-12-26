@@ -7,28 +7,44 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController,UITextFieldDelegate {
-
+class WeatherViewController: UIViewController {
+    
+    
+   
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var conditionImage: UIImageView!
+    @IBOutlet weak var degreeLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
     var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherManager.delegate = self
         searchField.delegate = self
-
-        // Do any additional setup after loading the view.
     }
+   
     @IBAction func searchButton(_ sender: Any) {
         print(searchField.text!)
         searchField.endEditing(true)
         
         
     }
+    
+    @IBAction func currentLocationButton(_ sender: Any) {
+        
+    }
+    
+}
+
+//MARK: -TextFieldDelegate
+extension WeatherViewController: UITextFieldDelegate{
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchField.endEditing(true)
-      
         return true
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchField.text {
             weatherManager.fetchWeather(cityname: city)
@@ -42,17 +58,19 @@ class WeatherViewController: UIViewController,UITextFieldDelegate {
             return false
         }
         textField.placeholder = "Search"
-            return true
+        return true
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: -WeatherManagerDelegate
+extension WeatherViewController: WeatherManagerDelegate{
+    
+    func didUpdateWeather(weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.locationLabel.text = weather.cityName
+            self.conditionImage.image = UIImage.init(systemName: weather.conditionName)
+            self.tempLabel.text = weather.tempString
+            
+        }
     }
-    */
-
 }

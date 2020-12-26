@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="45" id="jVB-g8-39Z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="address-level2"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaJ-uc-KgZ">
                                 <rect key="frame" x="335" y="60.333333333333314" width="35" height="32.666666666666686"/>
@@ -52,33 +52,30 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" backgroundImage="location.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="currentLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcR-MU-Q5S"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24º" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spo-iq-62v">
-                                <rect key="frame" x="100.33333333333334" y="324.33333333333331" width="114.33333333333334" height="83.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karachi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maZ-v7-Rgg">
                                 <rect key="frame" x="139" y="428" width="97" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsZ-Bf-6dG">
-                                <rect key="frame" x="212.66666666666666" y="324" width="49.999999999999972" height="84"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="70"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-z5-IHd">
-                                <rect key="frame" x="105.33333333333331" y="190" width="167" height="127.99999999999997"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-z5-IHd">
+                                <rect key="frame" x="105.33333333333333" y="194.33333333333334" width="164.33333333333337" height="123.66666666666667"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164.5" id="ILb-G7-7oY"/>
                                     <constraint firstAttribute="width" secondItem="UZF-z5-IHd" secondAttribute="height" multiplier="164:129" id="JEO-eN-KUQ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spo-iq-62v">
+                                <rect key="frame" x="99.000000000000014" y="328" width="176.33333333333337" height="84"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,10 +87,9 @@
                             <constraint firstItem="maZ-v7-Rgg" firstAttribute="centerY" secondItem="I38-AE-ths" secondAttribute="centerY" constant="40" id="C6C-Cs-um6"/>
                             <constraint firstItem="ohy-cj-x9C" firstAttribute="leading" secondItem="2vI-DJ-oSP" secondAttribute="trailing" constant="10" id="CJJ-iA-M9K"/>
                             <constraint firstItem="UZF-z5-IHd" firstAttribute="centerX" secondItem="I38-AE-ths" secondAttribute="centerX" id="CUq-BE-BTg"/>
-                            <constraint firstItem="spo-iq-62v" firstAttribute="centerX" secondItem="I38-AE-ths" secondAttribute="centerX" constant="-30" id="CYk-m3-DCd"/>
-                            <constraint firstItem="spo-iq-62v" firstAttribute="centerY" secondItem="I38-AE-ths" secondAttribute="centerY" constant="-40" id="DyD-xh-aVW"/>
+                            <constraint firstItem="spo-iq-62v" firstAttribute="centerX" secondItem="I38-AE-ths" secondAttribute="centerX" constant="-0.5" id="CYk-m3-DCd"/>
+                            <constraint firstItem="spo-iq-62v" firstAttribute="centerY" secondItem="I38-AE-ths" secondAttribute="centerY" constant="-36" id="DyD-xh-aVW"/>
                             <constraint firstItem="UZF-z5-IHd" firstAttribute="centerY" secondItem="I38-AE-ths" secondAttribute="centerY" constant="-150" id="Pcp-G1-PAp"/>
-                            <constraint firstItem="AsZ-Bf-6dG" firstAttribute="centerY" secondItem="I38-AE-ths" secondAttribute="centerY" constant="-40" id="QvX-n2-rmH"/>
                             <constraint firstItem="MaJ-uc-KgZ" firstAttribute="centerY" secondItem="ohy-cj-x9C" secondAttribute="centerY" id="X17-XX-14x"/>
                             <constraint firstItem="ohy-cj-x9C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="aQ4-vK-M2S"/>
                             <constraint firstItem="I38-AE-ths" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ao6-Cb-ZGb"/>
@@ -101,22 +97,24 @@
                             <constraint firstItem="2vI-DJ-oSP" firstAttribute="centerY" secondItem="ohy-cj-x9C" secondAttribute="centerY" id="j3t-m5-8Lt"/>
                             <constraint firstItem="MaJ-uc-KgZ" firstAttribute="leading" secondItem="ohy-cj-x9C" secondAttribute="trailing" constant="10" id="kIO-hk-qcK"/>
                             <constraint firstItem="maZ-v7-Rgg" firstAttribute="centerX" secondItem="I38-AE-ths" secondAttribute="centerX" id="nuh-zy-Yce"/>
-                            <constraint firstItem="AsZ-Bf-6dG" firstAttribute="centerX" secondItem="I38-AE-ths" secondAttribute="centerX" constant="50" id="sLS-iX-aMH"/>
                             <constraint firstItem="ohy-cj-x9C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="uSC-20-ojC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="conditionImage" destination="UZF-z5-IHd" id="ce7-YV-HbS"/>
+                        <outlet property="locationLabel" destination="maZ-v7-Rgg" id="8uv-uy-hbE"/>
                         <outlet property="searchField" destination="ohy-cj-x9C" id="suP-Ur-Rmq"/>
+                        <outlet property="tempLabel" destination="spo-iq-62v" id="MHL-hj-A5B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="34.399999999999999" y="93.103448275862078"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="375" height="812"/>
-        <image name="cloud.sun" catalog="system" width="128" height="93"/>
+        <image name="cloud" catalog="system" width="128" height="87"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="searchBarColor">
